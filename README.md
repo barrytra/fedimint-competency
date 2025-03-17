@@ -1,5 +1,8 @@
 # Bare JS Example
 
+## Example is deployed here 
+https://barrytra.github.io/fedimint-competency/
+
 This example shows how to use the `core-web` package in a bare javascript environment (no bundler).
 
 There's no ui, so open your browser's console to see the library in action.
