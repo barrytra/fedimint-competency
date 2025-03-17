@@ -1,0 +1,24 @@
+{
+  "name": "bare-js",
+  "private": true,
+  "type": "module",
+  "homepage": "https://barrytra.github.io/fedimint-competency",
+  "scripts": {
+    "build": "node ./bundle.mjs",
+    "dev": "pnpm run server",
+    "server": "http-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
