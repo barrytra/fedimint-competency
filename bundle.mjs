@@ -17,6 +17,12 @@ function printErr(err) {
 }
 
 fs.copyFile(
+  path.resolve(process.cwd(), 'index.html'),
+  path.resolve(OUTPUT_DIR, 'index.html'),
+  printErr
+)
+
+fs.copyFile(
   path.resolve(CORE_LIB_DIST, 'index.js'),
   path.resolve(OUTPUT_DIR, 'index.js'),
   printErr,

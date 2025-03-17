@@ -2,7 +2,7 @@
   "name": "bare-js",
   "private": true,
   "type": "module",
-  "homepage": "https://barrytra.github.io/fedimint-competency",
+  "homepage": "./",
   "scripts": {
     "build": "node ./bundle.mjs",
     "dev": "pnpm run server",
