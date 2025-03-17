@@ -6,32 +6,53 @@ const require = createRequire(import.meta.url)
 const CORE_LIB_DIST = path.dirname(require.resolve('@fedimint/core-web'))
 const WASM_DIST = path.resolve(
   CORE_LIB_DIST,
-  '../node_modules/@fedimint/fedimint-client-wasm-bundler',
+  '../node_modules/@fedimint/fedimint-client-wasm',
 )
-
-const OUTPUT_DIR = path.resolve(process.cwd(), 'dist')
-fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
 function printErr(err) {
   if (err) return console.log(err)
 }
 
+// Copy index.html
 fs.copyFile(
-  path.resolve(process.cwd(), 'index.html'),
-  path.resolve(OUTPUT_DIR, 'index.html'),
+  path.resolve('./index.html'),
+  path.resolve(DIST_DIR, 'index.html'),
   printErr
 )
 
+// Copy style.css
 fs.copyFile(
-  path.resolve(CORE_LIB_DIST, 'index.js'),
-  path.resolve(OUTPUT_DIR, 'index.js'),
-  printErr,
+  path.resolve('./style.css'),
+  path.resolve(DIST_DIR, 'style.css'),
+  printErr
 )
 
+// Copy index.js
 fs.copyFile(
-  path.resolve(CORE_LIB_DIST, '../src/worker/worker.js'),
-  path.resolve(OUTPUT_DIR, 'worker.js'),
-  printErr,
+  path.resolve('./index.js'),
+  path.resolve(DIST_DIR, 'index.js'),
+  printErr
+)
+
+// Copy worker.js
+fs.copyFile(
+  path.resolve('./worker.js'),
+  path.resolve(DIST_DIR, 'worker.js'),
+  printErr
+)
+
+// Copy fedimint_client_wasm.js
+fs.copyFile(
+  path.resolve('./fedimint_client_wasm.js'),
+  path.resolve(DIST_DIR, 'fedimint_client_wasm.js'),
+  printErr
+)
+
+// Copy fedimint_client_wasm_bg.js
+fs.copyFile(
+  path.resolve('./fedimint_client_wasm_bg.wasm'),
+  path.resolve(DIST_DIR, 'fedimint_client_wasm_bg.wasm'),
+  printErr
 )
 // fs.copyFile(path.resolve(WASM_DIST, 'fedimint_client_wasm_bg.wasm'), './fedimint_client_wasm_bg.wasm', printErr)
 

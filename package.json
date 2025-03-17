@@ -2,13 +2,10 @@
   "name": "bare-js",
   "private": true,
   "type": "module",
-  "homepage": "./",
   "scripts": {
     "build": "node ./bundle.mjs",
     "dev": "pnpm run server",
-    "server": "http-server",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "server": "http-server"
   },
   "keywords": [],
   "author": "",
@@ -17,9 +14,5 @@
   "devDependencies": {
     "http-server": "^14.1.1"
   },
-  "packageManager": "pnpm@9.12.0",
-  "dependencies": {
-    "@fedimint/core-web": "^0.0.10",
-    "gh-pages": "^6.3.0"
-  }
+  "packageManager": "pnpm@9.12.0"
 }
