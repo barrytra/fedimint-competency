@@ -3,11 +3,16 @@ import path from 'path'
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
-const CORE_LIB_DIST = path.dirname(require.resolve('@fedimint/core-web'))
-const WASM_DIST = path.resolve(
-  CORE_LIB_DIST,
-  '../node_modules/@fedimint/fedimint-client-wasm',
-)
+// const CORE_LIB_DIST = path.dirname(require.resolve('@fedimint/core-web'))
+// const WASM_DIST = path.resolve(
+//   CORE_LIB_DIST,
+//   '../node_modules/@fedimint/fedimint-client-wasm',
+// )
+
+const DIST_DIR = path.resolve('./dist')
+if (!fs.existsSync(DIST_DIR)) {
+  fs.mkdirSync(DIST_DIR)
+}
 
 function printErr(err) {
   if (err) return console.log(err)
